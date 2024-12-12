@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Cart</title>
+   </head>
+   <body>
+
+      <h1>My Shopping Cart</h1>
+
+      <h2>Hello <span data-th-text="${name}"></span></h2>
+
+      <div data-th-if="${count gt 10}">
+         <h3>Thank you for shopping with us</h3>
+      </div>
+      <div data-th-unless="${count gt 10}">
+         <h3>Are you sure you have everything you need?</h3>
+      </div>
+
+      <table border="1">
+         <thead>
+            <tr>
+               <th>Item</th>
+               <th>Quantity</th>
+            </tr>
+         </thead>
+         <tbody>
+            <!-- foreach (LineItem item: items) -->
+            <tr data-th-each="item, status: ${items}">
+               <td>
+                  <span data-th-text="${status.index}"></span>
+               </td>
+               <td>
+                  <span data-th-text="${item.name}"></span>
+               </td>
+               <td>
+                  <span data-th-text="${item.quantity}"></span>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+      <div>
+         <a href="/"> <h3>Back</h3> </a>
+      </div>
+
+   </body>
+</html>
+
+<!-- This HTML is designed to display a user's shopping cart dynamically, with content tailored to the user's shopping data. The page is built to integrate with a backend framework that utilizes a templating engine (e.g., Thymeleaf) to render data passed from the server. Here's the overall explanation:
+
+Page Title and Heading:
+
+The title of the page is "Cart," displayed on the browser tab.
+The heading <h1>My Shopping Cart</h1> introduces the main purpose of the page.
+Greeting the User:
+
+The Hello <span data-th-text="${name}"></span> element dynamically displays the user's name using server-rendered data.
+Conditional Messaging:
+
+Two <div> blocks display different messages based on the count variable passed from the backend:
+If count > 10, a thank-you message is displayed.
+Otherwise, a prompt asking if the user has everything they need is shown.
+Table for Cart Items:
+
+A table lists the shopping cart items, with headers for "Item" and "Quantity."
+Inside the <tbody>, a loop (data-th-each) iterates over a collection of items (items) passed from the server.
+Each item's index, name, and quantity are dynamically inserted into the table cells using data-th-text.
+Navigation:
+
+A link at the bottom (<a href="/">) takes the user back to the homepage, labeled with a clickable heading "Back."
+Purpose:
+The HTML leverages dynamic data rendering to personalize the shopping cart display for the user.
+The integration of a backend templating engine ensures that data (e.g., user name, item details) is
+seamlessly populated into the structure. This design supports clear communication and intuitive navigation
+for an online shopping experience. -->

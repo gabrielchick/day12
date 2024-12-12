@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Weather</title>
+</head>
+<body>
+
+   <h1>Weather for <span data-th-text="${city}"></span> </h1>
+
+   <h2>in <span data-th-text="${unit}"></span> </h2>
+   
+</body>
+</html>
+<!-- This HTML is a simple template for displaying weather information for a specific city, using dynamic data rendered by a backend templating engine (e.g., Thymeleaf). Here's what it achieves:
+
+Dynamic City Display:
+
+The <span data-th-text="${city}"></span> element dynamically displays the name of the city for which the weather data is shown. The ${city} variable is populated by the backend.
+Dynamic Unit of Measurement:
+
+The <span data-th-text="${unit}"></span> element displays the unit of measurement (e.g., metric or imperial) used for the weather data. The ${unit} variable is also populated by the backend.
+Purpose:
+This template serves as a simple and clean way to present the weather information for a given city in a specified unit. By dynamically injecting city and unit data, it ensures flexibility and reusability across various cities and measurement preferences. -->

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Welcome</title>
+</head>
+<body>
+
+   <h1>Welcome</h1>
+
+   <form method="GET" action="/cart/map">
+      <!-- controls -->
+      <table>
+         <tr>
+            <td> Name: </td>
+            <td>
+               <input type="text" name="name">
+            </td>
+         </tr>
+         <tr>
+            <td> Number of items: </td>
+            <td>
+               <input type="number" name="count">
+            </td>
+         </tr>
+         <tr>
+            <td> Delivery methods: </td>
+            <td>
+               <ul>
+                  <li> Rush <input type="checkbox" name="delivery" value="rush">, </li>
+                  <li> AM <input type="checkbox" name="delivery" value="am">, </li>
+                  <li> Insurance <input type="checkbox" name="delivery" value="insurance"> </li>
+               </ul>
+            </td>
+         </tr>
+         <tr>
+            <td></td>
+            <td>
+               <button type="submit"> Process </button>
+            </td>
+         </tr>
+      </table>
+
+   </form>
+   
+</body>
+</html>
+
+<!-- This HTML is designed to create a user-friendly form for submitting information about a shopping cart. Here's what the HTML achieves overall:
+
+Title and Heading:
+
+The title "Welcome" is displayed on the browser tab.
+The heading <h1>Welcome</h1> serves as a greeting for the page.
+Form Setup:
+
+The form uses the GET method and submits data to the /cart/map endpoint on the server when the "Process" button is clicked.
+Input Fields:
+
+Name: A text input field (name="name") allows the user to enter their name.
+Number of Items: A number input field (name="count") enables the user to specify the quantity of items.
+Delivery Methods: A list of checkboxes (name="delivery") allows the user to select multiple delivery options: "Rush," "AM," and "Insurance."
+Submission:
+
+A button labeled "Process" submits the form data to the specified server endpoint.
+The layout uses a table for a structured and clean presentation of the form elements. The data submitted will include the user's name, number of items, and selected delivery options, which can be processed on the server-side. -->
